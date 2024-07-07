@@ -76,8 +76,12 @@ public class AddNoteFragment extends Fragment {
 
             saveNoteToSharedPreferences(note);
 
-            editTextTitle.getText().clear();
-            editTextDescription.getText().clear();
+            Fragment fragment = new HomeFragment();
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.frame_layout, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
         }
     }
 

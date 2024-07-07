@@ -99,7 +99,7 @@
                     android:padding="@dimen/_10sdp"
                     android:textSize="@dimen/_12sdp"
                     android:background="@drawable/edit_text_bg"
-                    android:lines="100"
+                    android:lines="30"
                     android:textColor="@color/black"
                     android:gravity="top"/>
 
