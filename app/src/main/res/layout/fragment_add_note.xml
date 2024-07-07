@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:id="@+id/add_fragment"
+    tools:context=".AddNoteFragment">
+
+    <ScrollView
+        android:id="@+id/home_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <ImageButton
+                    android:id="@+id/add_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/back"
+                    android:background="@color/black"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:text="Add Notes"
+                android:textSize="@dimen/_20ssp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="normal">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Title"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/edit_text_bg"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:gravity="top"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Discription"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_10sdp"
+                    android:background="@drawable/edit_text_bg"
+                    android:lines="10"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:gravity="top"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/done_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:text="Done"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:background="@drawable/edit_bg"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
