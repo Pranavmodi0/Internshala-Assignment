@@ -32,6 +32,19 @@ public class MainActivity extends AppCompatActivity implements DetailNoteFragmen
 
         sharedPreferences = getSharedPreferences("notes", MODE_PRIVATE);
 
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
+
+                if (currentFragment instanceof HomeFragment || currentFragment instanceof LoginFragment) {
+                    finish();
+                } else {
+                    getSupportFragmentManager().popBackStack();
+                }
+            }
+        });
+
     }
 
     @Override

@@ -12,7 +12,9 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -26,6 +28,7 @@ public class LoginFragment extends Fragment {
     GoogleSignInOptions gso;
     GoogleSignInClient googleSignInClient;
     ImageView googleBtn;
+    LinearLayout loadingBox;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,6 +37,7 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
         googleBtn = view.findViewById(R.id.google_sign_in);
+        loadingBox = view.findViewById(R.id.loading_box);
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("userdata", MODE_PRIVATE);
         String name = sharedPreferences.getString("name", null);
@@ -47,7 +51,7 @@ public class LoginFragment extends Fragment {
             fragmentTransaction.commit();
         }
 
-         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.web_client_id))
                 .requestEmail()
                 .build();
@@ -56,6 +60,8 @@ public class LoginFragment extends Fragment {
         googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadingBox.setVisibility(View.VISIBLE);
+
                 Intent signInIntent = googleSignInClient.getSignInIntent();
                 startActivityForResult(signInIntent, 1000);
             }
@@ -71,9 +77,13 @@ public class LoginFragment extends Fragment {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+
+                loadingBox.setVisibility(View.GONE);
                 navigateToSecondActivity(account);
+
             } catch (ApiException e){
-                Toast.makeText(getActivity(), "Somenthing went wrong", Toast.LENGTH_SHORT).show();
+                loadingBox.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         }
     }

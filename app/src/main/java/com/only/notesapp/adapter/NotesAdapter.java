@@ -1,4 +1,4 @@
-package com.only.notesapp.Adapters;
+package com.only.notesapp.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,14 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.only.notesapp.DetailNoteFragment;
-import com.only.notesapp.Models.Notes;
 import com.only.notesapp.R;
+import com.only.notesapp.Models.Notes;
+
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder> {

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.only.notesapp.Models.Notes;
 import java.util.HashMap;
@@ -26,9 +27,6 @@ public class AddNoteFragment extends Fragment {
 
     private EditText editTextTitle;
     private EditText editTextDescription;
-    private Button buttonSave;
-    private ImageButton back_Btn;
-
     private Map<String, Notes> noteMap;
 
     @SuppressLint("MissingInflatedId")
@@ -39,8 +37,8 @@ public class AddNoteFragment extends Fragment {
 
         editTextTitle = view.findViewById(R.id.editText1);
         editTextDescription = view.findViewById(R.id.editText2);
-        buttonSave = view.findViewById(R.id.done_btn);
-        back_Btn = view.findViewById(R.id.add_back);
+        Button buttonSave = view.findViewById(R.id.done_btn);
+        ImageButton back_Btn = view.findViewById(R.id.add_back);
 
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +80,8 @@ public class AddNoteFragment extends Fragment {
             fragmentTransaction.replace(R.id.frame_layout, fragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
+        } else {
+            Toast.makeText(getContext(), "Please enter both title and description", Toast.LENGTH_SHORT).show();
         }
     }
 

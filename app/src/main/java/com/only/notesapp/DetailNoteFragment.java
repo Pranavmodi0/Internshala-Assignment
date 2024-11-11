@@ -27,6 +27,8 @@ public class DetailNoteFragment extends Fragment {
     public interface OnNoteActionListener {
         void onNoteDeleted(String title);
         void onNoteUpdated(String oldTitle, String newTitle, String newDescription);
+
+        void onBackPressed();
     }
 
     @Override

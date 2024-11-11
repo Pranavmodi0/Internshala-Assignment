@@ -5,7 +5,6 @@ import static android.content.Context.MODE_PRIVATE;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -14,10 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.only.notesapp.Adapters.NotesAdapter;
+import com.only.notesapp.adapter.NotesAdapter;
 import com.only.notesapp.Models.Notes;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment implements DetailNoteFragment.OnNoteA
     private NotesAdapter adapter;
     private List<Notes> noteList;
     private LinearLayout addNote;
+    private ImageView logout_btn;
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -47,6 +48,8 @@ public class HomeFragment extends Fragment implements DetailNoteFragment.OnNoteA
         recyclerView.setAdapter(adapter);
 
         addNote = view.findViewById(R.id.add_note_btn);
+        logout_btn = view.findViewById(R.id.logout);
+
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +61,25 @@ public class HomeFragment extends Fragment implements DetailNoteFragment.OnNoteA
                 fragmentTransaction.commit();
             }
         });
+
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("userdata", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+
+                Fragment fragment = new LoginFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_layout, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
 
         return view;
     }
@@ -100,6 +122,11 @@ public class HomeFragment extends Fragment implements DetailNoteFragment.OnNoteA
         }
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     private Map<String, Notes> loadNotesFromSharedPreferences() {
         String json = sharedPreferences.getString("notes_map", "{}");
         Gson gson = new Gson();
@@ -119,4 +146,6 @@ public class HomeFragment extends Fragment implements DetailNoteFragment.OnNoteA
         noteList.addAll(loadNotes());
         adapter.notifyDataSetChanged();
     }
+
+
 }

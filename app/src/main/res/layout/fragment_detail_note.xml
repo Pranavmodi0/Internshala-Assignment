@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".DetailNoteFragment">
 
     <ScrollView
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
                 android:src="@drawable/back"
-                android:background="@color/black"/>
+                android:background="@color/white"/>
 
 
         </LinearLayout>
@@ -80,7 +80,7 @@
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold"
                     android:background="@drawable/edit_text_bg"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:gravity="top" />
 
             </LinearLayout>
@@ -100,7 +100,7 @@
                     android:textSize="@dimen/_12sdp"
                     android:background="@drawable/edit_text_bg"
                     android:lines="30"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:gravity="top"/>
 
             </LinearLayout>
