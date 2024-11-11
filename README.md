@@ -5,10 +5,9 @@ This project outlines the design and development of a simple note-taking applica
 # ScreenShots
 
 <img src = "https://github.com/Pranavmodi0/Notes-App/assets/106916341/d8d15699-924a-49be-b272-fcffab8eeb4e" width="200" height="400" />
-<img src = "https://github.com/Pranavmodi0/Notes-App/assets/106916341/b7d856dc-1f55-4ac7-aac2-0b7c65253a31" width="200" height="400" />
-<img src = "https://github.com/Pranavmodi0/Notes-App/assets/106916341/9f6c3a6a-5f17-49fb-b97b-9e6aec3f79f9" width="200" height="400" />
-<img src = "https://github.com/Pranavmodi0/Notes-App/assets/106916341/84f0d7e2-d16e-49ce-b43c-17627f37aeb2" width="200" height="400" />
-<img src = "https://github.com/Pranavmodi0/Notes-App/assets/106916341/bc6f1135-3952-48c4-929a-0cbf8fababfc" width="200" height="400" />
+<img src = "![1](https://github.com/user-attachments/assets/7252225a-ea56-45c3-be1b-d521093eb22e)" height="400" />
+<img src = "![2](https://github.com/user-attachments/assets/d8014b3a-8dfb-45c6-997c-a178edbca43d)" width="200" height="400" />
+<img src = "![3](https://github.com/user-attachments/assets/1301eaa9-d7ec-4e89-86b6-ca35d4c21601)" width="200" height="400" />
 
 ## Single Activity with Fragments
 
