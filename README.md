@@ -2,6 +2,13 @@
 
 This project outlines the design and development of a simple note-taking application for Android devices. The app prioritizes a user-friendly and efficient experience, leveraging the following features:
 
+# ScreenShots
+
+<img src = "https://github.com/user-attachments/assets/c69d2f9d-bc4d-4a40-9955-6aefcb6c06e2" width="200" height="400" />
+<img src = "https://github.com/user-attachments/assets/192fb66a-2900-4690-8b75-503cef4e1b7d" width="200" height="400" />
+<img src = "https://github.com/user-attachments/assets/602527cc-1854-4349-8571-691c95adffe4" width="200" height="400" />
+<img src = "https://github.com/user-attachments/assets/af94d6fa-7fc2-4a07-898d-a6e8513356c6" width="200" height="400" />
+
 
 ## Single Activity with Fragments
 
